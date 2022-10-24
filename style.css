@@ -239,7 +239,6 @@ img.transparent {
 	background: rgba(0, 0, 0, 0.6);
 	max-width: 60em;
 	margin: auto;
-  padding-bottom: 50vh;
 }
 
 @media (min-width: 40em) {
