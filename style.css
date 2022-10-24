@@ -198,16 +198,20 @@ img.transparent {
   filter: hue-rotate(360deg) brightness(150%);
 }
 .appicon {
+  border-radius: 1em;
 	margin: 0em;
 	padding: 0em;
 	width: 70%;
 	height: 70%;
-  border: none;
   transition: filter 1s ease;
 }
 .appicon:hover {
   filter: hue-rotate(60deg) brightness(150%);
   transition: none;
+}
+
+.bees {
+  border: none;
 }
 
 .fakelink {
