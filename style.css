@@ -60,7 +60,7 @@ a.literal::after {
   color: white;
 }
 .navbar a.active:hover::before {
-  content: "↻ ";
+  content: "* ";
   color: white;
 }
 .navbar a:hover {
@@ -214,6 +214,7 @@ img.transparent {
   color: yellow;
   cursor: pointer;
   text-decoration: underline;
+  user-select: none;
 }
 .fakelink:link {
   color: yellow;
@@ -223,6 +224,10 @@ img.transparent {
 }
 .fakelink:hover {
   color: white;
+}
+
+.noselect {
+  user-select: none;
 }
 
 .caption {
