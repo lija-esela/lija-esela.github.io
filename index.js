@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const games = [
                 fgc.innerText,
                 "Guilty Gear Strive",
+                "Skullgirls",
                 "Rivals of Aether",
                 "any rogue-like",
                 "Team Fortress 2",
                 "CrossCode",
-                "flash tower defense",
                 "Terraria"
             ];
             let game_index = 0;
@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (caption !== null) {
             const eggs = [
                 caption.innerText,
-                "view my stuff:",
-                "things I do:",
-                "see my hobbies:"
+                "listen to my music:",
+                "hear my music:",
+                "my Bandcamp page:"
             ];
             caption.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 elem.innerHTML.split('<')[0],
                 "you should read my ",
                 "take a look at my ",
-                "I spend time writing a "
+                "I sometimes write a "
             ];
             const lhs = eggs[Math.floor(Math.random() * eggs.length)];
             const rhs = elem.innerHTML.slice(elem.innerHTML.indexOf('<'));
