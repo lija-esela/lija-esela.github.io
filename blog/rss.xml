@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Lija's Blog</title>
+    <link>https://lija.neocities.org/blog/</link>
+    <description>writing stuff down</description>
+    <language>en-us</language>
+    <item>
+      <title>Jesus Cigarettes</title>
+      <link>https://lija.neocities.org/blog/posts/jesus-cigarettes/</link>
+      <pubDate>Wed, 9 Oct 2021 13:00:00 GMT</pubDate>
+      <description>addiction</description>
+    </item>
+    <item>
+      <title>(Legal) Adulthood</title>
+      <link>https://lija.neocities.org/blog/posts/legal-adulthood/</link>
+      <pubDate>Wed, 8 Oct 2021 18:00:00 GMT</pubDate>
+      <description>HRT</description>
+    </item>
+    <item>
+      <title>The Web, but actually.</title>
+      <link>https://lija.neocities.org/blog/posts/the-web-but-actually/</link>
+      <pubDate>Wed, 6 Oct 2021 18:00:00 GMT</pubDate>
+      <description>browsing the web</description>
+    </item>
+  </channel>
+</rss>

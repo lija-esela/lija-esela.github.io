@@ -1,7 +1,83 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <!-- why was this one crucial line so hard to find -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+    <!-- link preview as per Facebook's OpenGraph spec -->
+    <meta property="og:image"       content="/lijasmall.png"/>
+    <meta property="og:description" content="Lija's personal website"/>
+    <meta property="og:title"       content="Lija Esela"/>
+    <meta property="og:url"         content="https://lija.neocities.org/"/>
+
+    <title>Lija</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icon.png" type="image/icon type">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/index.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="row">
+        <div class="column">
+          <h1 id="title-egg">Lija</h1>
+          <h3 id="subtitle-egg">General Purpose Website</h3>
+        </div>
+        <div class="column">
+          <div class="navbar">
+            <a href="/" class="active">home</a>
+            <a href="/blog/">blog</a>
+            <a href="/index/">index</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="column">
+          <ul id="hobbies">
+            <li>electronic music producer</li>
+            <li>intermediate C programmer</li>
+            <li><span id="fgc-egg">[various games]</span> fan</li>
+            <li>keyboard enthusiast</li>
+            <li><a href="http://www.tokipona.org/">toki pona</a> speaker</li>
+          </ul>
+          <div class="flexbox">
+            <div id="works">
+              <p><span id="caption-egg" class="caption">check my links:</span></p>
+              <div class="flexbox">
+                <a href="https://open.spotify.com/artist/7Lacwgo4WNi34nCBPWkej2">
+                  <img class="appicon" id="spotify" src="spotify.png"
+                       width="128" height="128" alt="[listen to my Spotify]"/>
+                </a>
+                <a href="https://github.com/lijaesela">
+                  <img class="appicon" id="github" src="github.png"
+                       width="128" height="128" alt="[browse my Github]"/>
+                </a>
+                <a href="https://www.youtube.com/channel/UCNcpq0MT60PtxGImKj_wM2g">
+                  <img class="appicon" id="youtube" src="youtube.png"
+                       width="156" height="126" alt="[watch my YouTube clips]"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <h3 id="blog-egg">be sure to check my <a href="/blog/">blog!</a></h3>
+        </div>
+        <div class="column">
+          <img id="portrait" src="lijasmall.png" width="400" height="400">
+          <p><span id="portrait-egg" class="caption">not what I look like</span></p>
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <span class="brown">[</span><span class="pink">Lea Hurzeler</span> <span class="brown">/</span> <span class="pink">Lija Esela</span><span class="brown">]</span>
+        <br>
+        <a style="word-wrap: break-word;" href="mailto:lhurzeler.biz@gmail.com" class="contact">lhurzeler.biz@gmail.com</a>
+        <br>
+        Discord: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="contact">Lija#2585</a>
+      </footer>
+      <hr>
+      <iframe id="george" src="https://george.gh0.pw/embed.cgi?lija" height="50"></iframe>
+    </div>
+  </body>
 </html>
