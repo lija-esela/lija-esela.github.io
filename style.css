@@ -206,7 +206,7 @@ img.transparent {
   transition: filter 1s ease;
 }
 .appicon:hover {
-  filter: brightness(150%);
+  filter: hue-rotate(60deg) brightness(150%);
   transition: none;
 }
 
@@ -228,6 +228,26 @@ img.transparent {
 
 .noselect {
   user-select: none;
+}
+
+.flaming {
+  background-color: yellow;
+  background-image: linear-gradient(45deg, #f3ec78, #df5281);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  transition: filter 1s ease;
+}
+.flaming:hover {
+  /*
+  background-color: green;
+  background-image: linear-gradient(45deg, #00aa77, #aa00ff);
+  */
+  filter: hue-rotate(180deg);
+  transition: none;
 }
 
 .caption {

@@ -23,9 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elem !== null) {
             const eggs = [
                 elem.innerText,
-                "Personal Website",
-                "Hub for Lija things",
-                "all Lija-related"
+                "personal website",
+                "hub for Lija things",
+                "all Lija-related",
+                "hello visitor",
+                "welcome",
+                "greetings"
             ];
             elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
@@ -41,10 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Guilty Gear Strive",
                 "Skullgirls",
                 "Rivals of Aether",
-                "any rogue-like",
+                "Spelunky",
                 "Team Fortress 2",
                 "CrossCode",
-                "Terraria"
+                "Terraria",
+                "Yu-Gi-Oh!",
+                "Overwatch (blegh)",
+                "Katana ZERO",
+                "Doki Doki Literature Club",
+                "Reassembly",
+                "Death Road to Canada",
+                "Risk of Rain",
+                "Hollow Knight",
+                "Breath of the Wild"
             ];
             let game_index = 0;
             fgc.onclick = () => {
@@ -58,31 +70,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })();
 
+    (async () => { // short misc egg
+        let elem = document.getElementById('short-misc-egg');
+        if (elem !== null) {
+            const eggs = [
+                elem.innerText,
+                "master of none",
+                "kimchi enjoyer",
+                "road hater",
+                "locomotive enjoyer",
+                "autistic hermit",
+                "woman by choice"
+            ];
+            elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
+        }
+    })();
+
     (async () => { // links egg
         let caption = document.getElementById('caption-egg');
         if (caption !== null) {
             const eggs = [
                 caption.innerText,
-                "listen to my music:",
-                "hear my music:",
-                "my Bandcamp page:"
+                "places to click:",
+                "things I create:",
+                "check these out:"
             ];
             caption.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
     })();
 
-    (async () => { // blog egg
-        let elem = document.getElementById('blog-egg');
+    (async () => { // misc egg
+        let elem = document.getElementById('misc-egg');
         if (elem !== null) {
             const eggs = [
-                elem.innerHTML.split('<')[0],
-                "you should read my ",
-                "take a look at my ",
-                "I sometimes write a "
+                elem.innerText,
+                "IRC: Indigo Roman Cancel"
             ];
-            const lhs = eggs[Math.floor(Math.random() * eggs.length)];
-            const rhs = elem.innerHTML.slice(elem.innerHTML.indexOf('<'));
-            elem.innerHTML = lhs + rhs;
+            elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
     })();
 
@@ -97,10 +121,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 "this doesn't look like me",
                 "this is not me",
                 "photo of not me",
+                "not me in the photo",
+                "not me in the picture",
                 "real me has more colors",
                 "real me is not in space",
                 "real me is not transparent",
-                "disclaimer: not me"
+                "real me is a person",
+                "real me is alive",
+                "real Lija is alive",
+                "real Lija is a human",
+                "real Lija lives",
+                "real me is alive",
+                "the real me lives",
+                "disclaimer: not me",
+                "who is this person",
+                "that's not Lija",
+                "this isn't Lija",
+                "not Lija",
+                "Lija is not in the box",
+                "where is she",
+                "where is Lija",
+                "where'd Lija go",
+                "why's Lija there",
+                "Lija is not here",
+                "Lija? maybe, no",
+                "what is it? not Lija",
+                "what is it? not me",
+                "who is it? not me",
+                "who? not Lija",
+                "who? not me",
+                "the portrait isn't me",
+                "the portrait isn't Lija",
+                "I'm not the portrait",
+                "Lija is not the portrait",
+                "caption: not me",
+                "caption: not Lija",
+                "what is a Lija",
+                "who is a Lija",
+                "the girl is not me",
+                "the girl is not Lija",
+                "I am not the girl",
+                "that girl is not Lija",
+                "that girl is not me"
             ];
             elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
