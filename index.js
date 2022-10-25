@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title_egg = "click the title again and we can act like this never happened";
             // style is set here so that without js there is no empty egg.
             title.style.cursor = "pointer";
+            title.style.userSelect = "none";
             title.onclick = () => {
                 title.innerHTML =
                     title.innerHTML === normal
@@ -70,17 +71,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })();
 
+    (async () => { // fgc egg more
+        let elem = document.getElementById('fgc-egg-more');
+        if (elem !== null) {
+            const eggs = [
+                elem.innerText,
+                "player",
+                "hobbyist"
+            ];
+            elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
+        }
+    })();
+
+    (async () => { // tp egg
+        let elem = document.getElementById('tp-egg');
+        if (elem !== null) {
+            const eggs = [
+                elem.innerText,
+                "li pona",
+                "li lon",
+                "li wawa",
+                "is beautiful",
+                "is forever",
+                "expert",
+                "sage",
+                "bender",
+                "knower",
+                "appreciator"
+            ];
+            elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
+        }
+    })();
+
     (async () => { // short misc egg
         let elem = document.getElementById('short-misc-egg');
         if (elem !== null) {
             const eggs = [
                 elem.innerText,
-                "master of none",
-                "kimchi enjoyer",
+                "kimchi eater",
                 "road hater",
                 "locomotive enjoyer",
                 "autistic hermit",
-                "woman by choice"
+                "woman by choice",
+                "Texan, I guess",
+                "ADHD-powered"
             ];
             elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
@@ -104,7 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elem !== null) {
             const eggs = [
                 elem.innerText,
-                "IRC: Indigo Roman Cancel"
+                "IRC: Indigo Roman Cancel",
+                "how to dress as human???",
+                "stuck in the blue room",
+                "everything is fine actually"
             ];
             elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
         }
@@ -165,6 +202,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 "that girl is not me"
             ];
             elem.innerText = eggs[Math.floor(Math.random() * eggs.length)];
+        }
+    })();
+
+    (async () => { // nameswap egg
+        let one = document.getElementById('nameswap-egg-1');
+        let two = document.getElementById('nameswap-egg-2');
+        if (Math.random() > 0.5 && one !== null && two !== null) {
+            let temp = one.innerText;
+            one.innerText = two.innerText;
+            two.innerText = temp;
         }
     })();
 
