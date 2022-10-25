@@ -1,8 +1,25 @@
+/* one css to rule them all. */
+
+/* TODO: finish extracting colors to variables */
+
+:root {
+  --wallpaper-fallback: gray;
+  --bg-color: rgba(0, 0, 0, 0.6);
+  --bg-active-color: rgb(150, 50, 100);
+  --fg-color: white;
+  --accent-color: pink;
+  --hover-color: #ddd;
+  --hover-inverse-color: black;
+  --george-bg-color: white;
+}
+
+/* absolutely necessary structural classes */
+
 body {
 	margin: 0em;
 	padding: 0em;
-	background-color: gray;
-	color: white;
+	background-color: var(--wallpaper-fallback);
+	color: var(--fg-color);
   font-family: "Fira Code", monospace, sans-serif, serif;
 	font-size: 12pt;
 	text-align: center;
@@ -10,31 +27,41 @@ body {
 	background-attachment: fixed;
 }
 
-ul {
-	display: inline-block;
-	text-align: left;
-  list-style: none;
-}
-ul li::before {
-  content: "> ";
-  color: pink;
+.main {
+	height: auto;
+	min-height: 100vh;
+	background: var(--bg-color);
+	max-width: 60em;
+	margin: auto;
 }
 
-a {
-	color: yellow;
+@media (min-width: 40em) {
+  .column {
+    float: left;
+    width: 50%;
+    height: 100%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
-a:link {
-	color: yellow;
+@media (max-width: 40em) {
+  .column {
+    margin-bottom: 2em;
+  }
 }
-a:visited {
-	color: brown;
+
+.flexbox {
+	margin: 0em;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-a:hover {
-	color: white;
-}
-a.literal::after {
-  content: attr(href);
-}
+
+/* navbar at the top of every page */
 
 .navbar {
   overflow: hidden;
@@ -53,50 +80,54 @@ a.literal::after {
 }
 .navbar a::before {
   content: "- ";
-  color: pink;
+  color: var(--accent-color);
 }
 .navbar a.active::before {
   content: "@ ";
-  color: white;
+  color: var(--hover-color);
 }
+/*
 .navbar a.active:hover::before {
   content: "* ";
-  color: white;
 }
+*/
 .navbar a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--hover-color);
+  color: var(--hover-inverse-color);
 }
 .navbar a:hover::before {
   content: "> ";
-  color: black;
-}
-.navbar a.visited {
-  color: yellow;
+  color: var(--hover-inverse-color);
 }
 .navbar a.active {
-  background-color: rgb(150, 50, 100);
-  color: white;
+  background-color: var(--bg-active-color);
+  color: var(--hover-color);
 }
 
-div.friends {
-	margin: 0em;
-	padding: 1em;
-	display: flex;
-  flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
+
+/* basic styling */
+
+ul {
+	display: inline-block;
+	text-align: left;
+  list-style: none;
 }
-div.friends a {
-  float: left;
-  text-align: center;
-  padding: 0.8em;
-  text-decoration: none;
-  font-size: 16pt;
-}
-div.friends a::before {
+ul li::before {
   content: "> ";
-  color: pink;
+  color: var(--accent-color);
+}
+
+a {
+	color: yellow;
+}
+a:link {
+	color: yellow;
+}
+a:visited {
+	color: brown;
+}
+a:hover {
+	color: var(--hover-color);
 }
 
 button {
@@ -117,28 +148,16 @@ button:hover {
   background-color: magenta;
 }
 
-div.post p::before {
-  content: "<| ";
-  color: pink;
-}
-div.post p::after {
-  content: " |>";
-  color: pink;
-}
-button.post-title-text {
-  font-size: 18pt;
-}
-
 h1 {
 	margin: 0em;
 	padding: 0.4em;
 }
 h1::before {
-  color: pink;
+  color: var(--accent-color);
   content: "</ ";
 }
 h1::after {
-  color: pink;
+  color: var(--accent-color);
   content: " />";
 }
 
@@ -160,6 +179,19 @@ p {
 	padding-bottom: 1em;
 }
 
+img {
+  max-width: 80%;
+	height: 80%;
+	margin: 0em;
+	padding: 0em;
+  border: 0.2em solid black;
+  transition: 3s ease;
+}
+img.addbg {
+  padding: 1em;
+  background-color: rgb(150, 50, 100);
+}
+
 footer {
   line-height: 160%;
 }
@@ -167,6 +199,48 @@ footer {
 hr {
   padding: 0.4em;
   border: 0em;
+}
+
+/* classes */
+
+div.friends {
+	margin: 0em;
+	padding: 1em;
+	display: flex;
+  flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+div.friends a {
+  float: left;
+  text-align: center;
+  padding: 0.8em;
+  text-decoration: none;
+  font-size: 16pt;
+}
+div.friends a::before {
+  content: "> ";
+  color: var(--accent-color);
+}
+
+div.popup {
+  min-width: 30em;
+	background: var(--bg-color);
+	padding: 1em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+a.literal::after {
+  content: attr(href);
+}
+
+.noselect {
+  user-select: none;
 }
 
 .brown {
@@ -182,21 +256,6 @@ hr {
   color: red;
 }
 
-img {
-  max-width: 80%;
-	height: 80%;
-	margin: 0em;
-	padding: 0em;
-  border: 0.2em solid black;
-  transition: 3s ease;
-}
-img.transparent {
-  padding: 1em;
-  background-color: rgb(150, 50, 100);
-}
-#portrait:hover {
-  filter: hue-rotate(360deg) brightness(150%);
-}
 .appicon {
   border-radius: 1em;
 	margin: 0em;
@@ -208,10 +267,6 @@ img.transparent {
 .appicon:hover {
   filter: hue-rotate(60deg) brightness(150%);
   transition: none;
-}
-
-.bees {
-  border: none;
 }
 
 .fakelink {
@@ -227,11 +282,15 @@ img.transparent {
   color: brown;
 }
 .fakelink:hover {
-  color: white;
+  color: var(--hover-color);
 }
 
-.noselect {
-  user-select: none;
+.caption {
+  letter-spacing: 0.1em;
+  background-color: black;
+	color: rgb(200, 200, 255);
+	margin: 0em;
+	padding: 0.4em;
 }
 
 .flaming {
@@ -254,62 +313,28 @@ img.transparent {
   transition: none;
 }
 
-.caption {
-  letter-spacing: 0.1em;
-  background-color: black;
-	color: rgb(200, 200, 255);
-	margin: 0em;
-	padding: 0.4em;
+div.blogpost p::before {
+  content: "<| ";
+  color: var(--accent-color);
 }
-
-.main {
-	height: auto;
-	min-height: 100vh;
-	background: rgba(0, 0, 0, 0.6);
-	max-width: 60em;
-	margin: auto;
+div.blogpost p::after {
+  content: " |>";
+  color: var(--accent-color);
 }
-
-@media (min-width: 40em) {
-  .column {
-    float: left;
-    width: 50%;
-    height: 100%;
-  }
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-@media not (min-width: 40em) {
-  .column {
-    margin-bottom: 2em;
-  }
-}
-
-.flexbox {
-	margin: 0em;
-	padding: 1em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.popup {
-  min-width: 30em;
-	background: rgba(0, 0, 0, 0.6);
-	padding: 1em;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+button.blogpost-title-text {
+  font-size: 18pt;
 }
 
 #george {
-  background-color: white;
+  background-color: var(--george-bg-color);
   width: 90%;
   margin: 1em;
+}
+
+#self-portrait:hover {
+  filter: hue-rotate(360deg) brightness(150%);
+}
+
+#apionet {
+  border: none;
 }
